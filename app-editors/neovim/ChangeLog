@@ -1,0 +1,5 @@
+*neovim-0.3.8 (10 Aug 2019)
+
+  10 Aug 2019;  <bemeurer@gentoo.org> +files/sysinit.vim, +metadata.xml,
+  +neovim-0.3.8.ebuild:
+  app-editors/neovim: bump 0.3.8
