@@ -1,3 +1,6 @@
+  10 Aug 2019;  <bemeurer@gentoo.org> kitty-0.14.3.ebuild:
+  x11-terms/kitty: EAPI 7
+
 *kitty-0.14.3 (10 Aug 2019)
 
   10 Aug 2019;  <bemeurer@gentoo.org> +files/kitty-0.14.3-flags.patch,
