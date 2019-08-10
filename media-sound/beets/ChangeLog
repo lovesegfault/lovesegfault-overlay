@@ -1,0 +1,4 @@
+*beets-1.4.9 (10 Aug 2019)
+
+  10 Aug 2019;  <bemeurer@gentoo.org> +beets-1.4.9.ebuild, +metadata.xml:
+  media-sound/beets: bump 1.4.9
