@@ -1,0 +1,6 @@
+*waybar-0.7.2 (10 Aug 2019)
+*waybar-9999 (10 Aug 2019)
+
+  10 Aug 2019;  <bemeurer@gentoo.org> +metadata.xml, +waybar-0.7.2.ebuild,
+  +waybar-9999.ebuild:
+  gui-apps/waybar: new package (0.7.2, 9999)
