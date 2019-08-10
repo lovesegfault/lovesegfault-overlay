@@ -1,3 +1,8 @@
+*shotwell-0.31.0 (10 Aug 2019)
+
+  10 Aug 2019;  <bemeurer@gentoo.org> +shotwell-0.31.0.ebuild:
+  media-gfx/shotwell: bump 0.31.0
+
 *shotwell-0.30.4 (10 Aug 2019)
 
   10 Aug 2019;  <bemeurer@gentoo.org> +metadata.xml, +shotwell-0.30.4.ebuild:
