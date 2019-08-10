@@ -1,0 +1,5 @@
+*kitty-0.14.3 (10 Aug 2019)
+
+  10 Aug 2019;  <bemeurer@gentoo.org> +files/kitty-0.14.3-flags.patch,
+  +files/kitty-0.14.3-svg-icon.patch, +kitty-0.14.3.ebuild, +metadata.xml:
+  x11-terms/kitty: bump 0.14.3
