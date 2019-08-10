@@ -1,3 +1,6 @@
+  10 Aug 2019;  <bemeurer@gentoo.org> libcgroup-0.41-r6.ebuild:
+  dev-libs/libcgroup: Replace prune_libtool_files
+
   10 Aug 2019;  <bemeurer@gentoo.org> +files/libcgroup-0.41-replace-DECLS.patch,
   +files/libcgroup-0.41-replace-INLCUDES.patch, -files/cgconfig.confd-r1,
   -files/cgconfig.initd-r1, -files/cgred.confd-r2, -files/cgred.initd-r1,

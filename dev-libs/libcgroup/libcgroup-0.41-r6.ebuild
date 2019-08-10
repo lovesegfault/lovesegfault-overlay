@@ -88,7 +88,7 @@ src_test() {
 
 src_install() {
 	default
-	prune_libtool_files --all
+	find "${D}" -name '*.la' -delete || die
 
 	insinto /etc/cgroup
 	doins samples/*.conf || die
