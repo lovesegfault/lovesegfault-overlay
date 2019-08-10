@@ -1,7 +1,7 @@
 # Copyright 1999-2019 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=7
 VALA_MIN_API_VERSION="0.40"
 VALA_MAX_API_VERSION="0.42"
 
@@ -15,7 +15,17 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="opencv udev"
 
-COMMON_DEPEND="
+BDEPEND="
+	virtual/pkgconfig
+"
+
+DEPEND="
+	$(vala_depend)
+	dev-libs/appstream-glib
+	>=sys-devel/gettext-0.19.8
+	net-libs/libsoup:2.4[vala]
+	>=media-libs/gexiv2-0.11.0[vala]
+	app-crypt/gcr[vala]
 	>=x11-libs/gtk+-3.22.0:3
 	>=dev-libs/glib-2.40.0:2
 	>=dev-libs/libgee-0.8.5:0.8
@@ -43,19 +53,11 @@ COMMON_DEPEND="
 		sys-apps/dbus[user-session]
 	)
 "
-RDEPEND="${COMMON_DEPEND}
+
+RDEPEND="${DEPEND}
+	dev-util/itstool
 	media-plugins/gst-plugins-gdkpixbuf:1.0
 	media-plugins/gst-plugins-meta:1.0
-"
-DEPEND="${COMMON_DEPEND}
-	$(vala_depend)
-	dev-libs/appstream-glib
-	dev-util/itstool
-	>=sys-devel/gettext-0.19.8
-	virtual/pkgconfig
-	net-libs/libsoup:2.4[vala]
-	media-libs/gexiv2[vala]
-	app-crypt/gcr[vala]
 "
 
 src_prepare() {
