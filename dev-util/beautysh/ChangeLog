@@ -1,0 +1,4 @@
+*beautysh-5.0.2 (10 Aug 2019)
+
+  10 Aug 2019;  <bemeurer@gentoo.org> +beautysh-5.0.2.ebuild, +metadata.xml:
+  dev-util/beautysh: new package (5.0.2)
