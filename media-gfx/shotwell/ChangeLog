@@ -1,3 +1,6 @@
+  12 Aug 2019;  <bemeurer@gentoo.org> shotwell-0.30.4.ebuild:
+  media-gfx/shotwell: Fixes to EAPI-7 port
+
   10 Aug 2019;  <bemeurer@gentoo.org> shotwell-0.30.4.ebuild:
   media-gfx/shotwell:
 

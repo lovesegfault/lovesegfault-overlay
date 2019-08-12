@@ -3,7 +3,7 @@
 
 EAPI=7
 VALA_MIN_API_VERSION="0.40"
-VALA_MAX_API_VERSION="0.42"
+VALA_MAX_API_VERSION="0.46"
 
 inherit gnome.org gnome2-utils meson vala xdg
 
@@ -15,11 +15,7 @@ SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ia64 ~ppc ~ppc64 ~sparc ~x86"
 IUSE="opencv udev"
 
-BDEPEND="
-	virtual/pkgconfig
-"
-DEPEND="
-	$(vala_depend)
+COMMON_DEPEND="
 	>=app-crypt/gcr-3:=[gtk,vala]
 	>=dev-db/sqlite-3.5.9:3
 	dev-libs/appstream-glib
@@ -28,13 +24,11 @@ DEPEND="
 	dev-libs/libgdata
 	>=dev-libs/libgee-0.8.5:0.8
 	>=dev-libs/libxml2-2.6.32:2
-	>=media-libs/gexiv2-0.10.4[vala]
 	media-libs/gst-plugins-base:1.0
 	media-libs/gstreamer:1.0
 	>=media-libs/libexif-0.6.16:=
 	>=media-libs/libgphoto2-2.5:=
 	>=media-libs/libraw-0.13.2:=
-	net-libs/libsoup:2.4[vala]
 	>=net-libs/webkit-gtk-2.4:4
 	>=sys-devel/gettext-0.19.8
 	x11-libs/cairo
@@ -43,7 +37,18 @@ DEPEND="
 	opencv? ( >=media-libs/opencv-2.3.0:= )
 	udev? ( >=virtual/libgudev-145:= )
 "
-RDEPEND="${DEPEND}
+BDEPEND="
+	$(vala_depend)
+	dev-libs/appstream-glib
+	virtual/pkgconfig
+"
+DEPEND="
+	${COMMON_DEPEND}
+	>=media-libs/gexiv2-0.10.4[vala]
+	net-libs/libsoup:2.4[vala]
+"
+RDEPEND="
+	${COMMON_DEPEND}
 	dev-util/itstool
 	media-plugins/gst-plugins-gdkpixbuf:1.0
 	media-plugins/gst-plugins-meta:1.0
