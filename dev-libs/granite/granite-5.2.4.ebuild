@@ -5,7 +5,7 @@ EAPI=7
 
 VALA_MIN_API_VERSION=0.40
 
-inherit gnome2-utils meson vala
+inherit xdg-utils meson vala
 
 DESCRIPTION="Elementary OS library that extends GTK+"
 HOMEPAGE="https://github.com/elementary/granite"
@@ -42,14 +42,10 @@ src_configure() {
 	meson_src_configure
 }
 
-pkg_preinst() {
-	gnome2_icon_savelist
-}
-
 pkg_postinst() {
-	gnome2_icon_cache_update
+	xdg_icon_cache_update
 }
 
 pkg_postrm() {
-	gnome2_icon_cache_update
+	xdg_icon_cache_update
 }
