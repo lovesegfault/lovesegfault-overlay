@@ -43,9 +43,11 @@ src_configure() {
 }
 
 pkg_postinst() {
+	xdg_desktop_database_update
 	xdg_icon_cache_update
 }
 
 pkg_postrm() {
+	xdg_desktop_database_update
 	xdg_icon_cache_update
 }
