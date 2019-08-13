@@ -1,0 +1,4 @@
+*bookworm-1.1.2 (13 Aug 2019)
+
+  13 Aug 2019;  <bemeurer@gentoo.org> +bookworm-1.1.2.ebuild, +metadata.xml:
+  app-text/bookworm: new package (1.1.2)
