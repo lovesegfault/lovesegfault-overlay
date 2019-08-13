@@ -5,7 +5,7 @@ EAPI=7
 
 VALA_MIN_API_VERSION=0.40
 
-inherit xdg-utils meson vala
+inherit gnome2-utils meson vala xdg-utils
 
 DESCRIPTION="A simple, focused eBook reader"
 HOMEPAGE="https://github.com/babluboy/bookworm"
@@ -43,11 +43,13 @@ src_configure() {
 }
 
 pkg_postinst() {
+	gnome2_schemas_update
 	xdg_desktop_database_update
 	xdg_icon_cache_update
 }
 
 pkg_postrm() {
+	gnome2_schemas_update
 	xdg_desktop_database_update
 	xdg_icon_cache_update
 }

@@ -1,4 +1,7 @@
   13 Aug 2019;  <bemeurer@gentoo.org> bookworm-1.1.2.ebuild:
+  app-text/bookworm: add gnome2_schemas_update
+
+  13 Aug 2019;  <bemeurer@gentoo.org> bookworm-1.1.2.ebuild:
   app-text/bookworm: fix xdg_desktop_database_update
 
 *bookworm-1.1.2 (13 Aug 2019)
