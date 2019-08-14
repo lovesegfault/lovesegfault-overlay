@@ -28,6 +28,11 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+src_prepare() {
+	vala_src_prepare
+	eapply_user
+}
+
 src_configure() {
 	local emesonargs=(
 		$(meson_use doc documentation)
