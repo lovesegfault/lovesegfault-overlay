@@ -5,7 +5,7 @@ EAPI=7
 
 VALA_MIN_API_VERSION=0.40
 
-inherit xdg-utils meson vala
+inherit meson vala xdg-utils
 
 DESCRIPTION="Elementary OS library that extends GTK+"
 HOMEPAGE="https://github.com/elementary/granite"
@@ -27,13 +27,6 @@ DEPEND="
 	>=x11-libs/gtk+-3.22:3[introspection]
 "
 RDEPEND="${DEPEND}"
-
-#S="${WORKDIR}"/"${PN}"-"$(ver_cut 1-2)"
-
-src_prepare() {
-	vala_src_prepare
-	eapply_user
-}
 
 src_configure() {
 	local emesonargs=(
