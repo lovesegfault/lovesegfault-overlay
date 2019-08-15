@@ -53,9 +53,10 @@ src_install() {
 	# Install aux files
 	doins -r "share/appdata" "share/lintian"
 	# Install & Symlink binary
-	exeinto "/usr/share/${MY_PN~}"
-	doexe "share/${MY_PN~}/${MY_PN~}"
+	fperms +x "/usr/share/${MY_PN~}/${MY_PN~}"
 	dosym "../share/${MY_PN~}/${MY_PN~}" "/usr/bin/${MY_PN~}"
+	fperms +x "/usr/share/${MY_PN~}/resources/app.asar.unpacked/mailsync"
+	fperms +x "/usr/share/${MY_PN~}/resources/app.asar.unpacked/mailsync.bin"
 	# share/applications share/icons  share/pixmaps
 	# Desktop
 	domenu "share/applications/${MY_PN~}.desktop"

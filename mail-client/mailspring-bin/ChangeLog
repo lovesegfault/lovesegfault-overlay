@@ -1,3 +1,6 @@
+  15 Aug 2019;  <bemeurer@gentoo.org> mailspring-bin-1.6.3.ebuild:
+  mail-client/mailspring-bin: fix permissions
+
 *mailspring-bin-1.6.3 (15 Aug 2019)
 
   15 Aug 2019;  <bemeurer@gentoo.org> +mailspring-bin-1.6.3.ebuild,
