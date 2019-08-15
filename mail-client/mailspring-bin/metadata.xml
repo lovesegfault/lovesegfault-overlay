@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>bernardo@standard.ai</email>
+        <name>Bernardo Meurer</name>
+    </maintainer>
+    <longdescription lang="en">
+        A beautiful, fast and maintained fork of Nylas Mail
+    </longdescription>
+    <upstream>
+        <remote-id type="github">Foundry376/Mailspring</remote-id>
+        <bugs-to>https://github.com/Foundry376/Mailspring/issues</bugs-to>
+        <changelog>https://github.com/Foundry376/Mailspring/releases</changelog>
+    </upstream>
+</pkgmetadata>

@@ -1,0 +1,5 @@
+*mailspring-bin-1.6.3 (15 Aug 2019)
+
+  15 Aug 2019;  <bemeurer@gentoo.org> +mailspring-bin-1.6.3.ebuild,
+  +metadata.xml:
+  mail-client/mailspring-bin: new package (1.6.3)
