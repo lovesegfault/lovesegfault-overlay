@@ -1,3 +1,8 @@
+*slack-term-9999 (19 Aug 2019)
+
+  19 Aug 2019;  <bemeurer@gentoo.org> +slack-term-9999.ebuild:
+  net-im/slack-term: add 9999
+
   19 Aug 2019;  <bemeurer@gentoo.org> slack-term-0.4.1.ebuild:
   net-im/slack-term: Fix go build process
 
