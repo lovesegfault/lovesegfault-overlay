@@ -1,0 +1,4 @@
+*slack-term-0.4.1 (19 Aug 2019)
+
+  19 Aug 2019;  <bemeurer@gentoo.org> +metadata.xml, +slack-term-0.4.1.ebuild:
+  net-im/slack-term: new package (0.4.1)

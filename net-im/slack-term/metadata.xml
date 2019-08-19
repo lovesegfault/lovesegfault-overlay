@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>bernardo@standard.ai</email>
+        <name>Bernardo Meurer</name>
+    </maintainer>
+    <longdescription lang="en">
+        Slack client for your terminal
+    </longdescription>
+    <upstream>
+        <remote-id type="github">erroneousboat/slack-term</remote-id>
+        <bugs-to>https://github.com/erroneousboat/slack-term/issues</bugs-to>
+        <changelog>https://github.com/erroneousboat/slack-term/releases</changelog>
+    </upstream>
+</pkgmetadata>
