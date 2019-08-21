@@ -11,7 +11,7 @@ DESCRIPTION="Elementary OS library that extends GTK+"
 HOMEPAGE="https://github.com/elementary/granite"
 SRC_URI="https://github.com/elementary/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="LGPL-3"
+LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~x86"
 IUSE="doc test"
@@ -20,6 +20,10 @@ BDEPEND="
 	$(vala_depend)
 	>=dev-util/meson-0.48.2
 	virtual/pkgconfig
+	doc? (
+		dev-util/gtk-doc
+		dev-lang/vala[valadoc]
+	)
 "
 DEPEND="
 	>=dev-libs/glib-2.50:2
@@ -30,6 +34,18 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	vala_src_prepare
+
+	if use doc; then
+		# Fixes wrong valadoc bin name
+		sed -i \
+		"s/find_program('valadoc')/find_program('valadoc-$(vala_best_api_version)')/g" \
+		doc/meson.build || die "Failed to sed doc/meson.build"
+
+		# Fixes doc file location
+		mkdir "${WORKDIR}/doc" || die
+		cp -r doc/* "${WORKDIR}/doc" || die
+	fi
+
 	eapply_user
 }
 

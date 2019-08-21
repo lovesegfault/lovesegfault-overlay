@@ -1,3 +1,6 @@
+  21 Aug 2019;  <bemeurer@gentoo.org> granite-5.2.4.ebuild, metadata.xml:
+  dev-libs/granite: Fixes
+
   14 Aug 2019;  <bemeurer@gentoo.org> granite-5.2.4.ebuild:
   dev-libs/granite: Fix src_prepare & LICENSE
 

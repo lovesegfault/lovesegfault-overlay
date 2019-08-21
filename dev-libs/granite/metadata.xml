@@ -5,6 +5,10 @@
 		<email>bernardo@standard.ai</email>
 		<name>Bernardo Meurer</name>
 	</maintainer>
+	<maintainer type="project">
+		<email>proxy-maint@gentoo.org</email>
+		<name>Gentoo Proxy Maintainers Project</name>
+	</maintainer>
 	<longdescription lang="en">
 		Granite is a companion library for GTK+ and GLib. Among other things,
 		it provides complex widgets and convenience functions designed for
