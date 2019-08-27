@@ -1,3 +1,8 @@
+*beets-1.4.9-r1 (27 Aug 2019)
+
+  27 Aug 2019;  <bemeurer@gentoo.org> +beets-1.4.9-r1.ebuild, metadata.xml:
+  media-sound/beets: start ebuild re-write
+
 *beets-1.4.9 (10 Aug 2019)
 
   10 Aug 2019;  <bemeurer@gentoo.org> +beets-1.4.9.ebuild, +metadata.xml:
