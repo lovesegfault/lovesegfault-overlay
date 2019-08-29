@@ -6,8 +6,8 @@ EAPI=7
 PYTHON_COMPAT=( python2_7 python3_{5,6,7})
 inherit distutils-r1
 
-DESCRIPTION="Confuse is a configuration library for Python that uses YAML"
-HOMEPAGE="https://github.com/beetbox/confuse"
+DESCRIPTION="A setuptools/wheel/cffi extension to embed a binary data in wheels"
+HOMEPAGE="https://github.com/getsentry/milksnake"
 SRC_URI="https://github.com/getsentry/${PN}/archive/${PV}.tar.gz"
 
 LICENSE="MIT"
