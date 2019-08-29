@@ -1,3 +1,6 @@
+  29 Aug 2019;  <bemeurer@gentoo.org> -shotwell-0.30.4.ebuild:
+  media-gfx/shotwell: yank 0.30.4 (bumped upstream)
+
   13 Aug 2019;  <bemeurer@gentoo.org> shotwell-0.31.0.ebuild:
   media-gfx/shotwell: Further EAPI-7 Fixes
 
