@@ -1,0 +1,4 @@
+*milksnake-0.1.5 (29 Aug 2019)
+
+  29 Aug 2019;  <bemeurer@gentoo.org> +metadata.xml, +milksnake-0.1.5.ebuild:
+  dev-python/milksnake: new package (0.1.5)
