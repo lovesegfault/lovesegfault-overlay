@@ -57,7 +57,7 @@ waf-run() {
 		"${jobs}"
 		--verbose
 	)
-	[ -z "${args}" ] || cmd+=("${args[@]}")
+	[ -z "${args}" ] || cmd+=("${args[*]}")
 	echo "${cmd[@]}" >&2
 	"${cmd[@]}" || die "Target ${target} failed"
 }
@@ -106,14 +106,11 @@ src_configure() {
 	CCFLAGS="${CFLAGS}"
 	LINKFLAGS="${CFLAGS} ${LDFLAGS}"
 	PKGCONFIG="$(tc-getPKG_CONFIG)"
-	waf-run "configure" "${wafconfargs[@]}"
+	waf-run "configure" "${wafconfargs[*]}"
 }
 
 src_compile() {
-	local wafbuildargs=()
-	use "test" && wafbuildargs+=( --with-cpptests )
-
-	waf-run "build" "${wafbuildargs[@]}"
+	waf-run "build"
 
 	if use doc ; then
 		waf-run 'doc'

@@ -1,3 +1,6 @@
+  30 Aug 2019;  <bemeurer@gentoo.org> essentia-2.1_beta5.ebuild:
+  dev-libs/essentia: DUMPSTER FIRE
+
 *essentia-2.1_beta5 (30 Aug 2019)
 
   30 Aug 2019;  <bemeurer@gentoo.org> +essentia-2.1_beta5.ebuild, +metadata.xml:
