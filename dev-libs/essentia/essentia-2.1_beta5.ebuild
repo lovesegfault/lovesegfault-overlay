@@ -20,6 +20,8 @@ SRC_URI="https://github.com/MTG/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 test? ( https://github.com/MTG/essentia-audio/archive/beeca09181f6671dc3abe9115289038f097a227d.zip -> audio.zip )
 "
 
+PATCHES=("${FILESDIR}/${P}-wscript.patch")
+
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -47,17 +49,20 @@ WAF="${S}/waf"
 
 waf-run() {
 	[ $# -ge 1 ] || die "Insufficient arguments given to waf-run"
+	# The build target, such as configure, build, test, etc
 	local target="${1}"
+	# The arguments, such as --destdir, --libdir, --jobs
 	local args="${@:2}"
-	local jobs="--jobs=$(makeopts_jobs)"
+	# Construct command
 	local cmd=(
 		"${EPYTHON}"
 		"${WAF}"
 		"${target}"
-		"${jobs}"
+		--jobs=$(makeopts_jobs)
 		--verbose
 	)
-	[ -z "${args}" ] || cmd+=("${args[*]}")
+	# Only append args if any, waf will go nuts if you pass it a ''
+	[ -z "${args}" ] || cmd+=(${args[*]})
 	echo "${cmd[@]}" >&2
 	"${cmd[@]}" || die "Target ${target} failed"
 }
@@ -67,13 +72,13 @@ src_configure() {
 	if use test; then
 		cp -r "${WORKDIR}/essentia-audio-master/." "./test/audio" || die
 	fi
+
 	# Waf is a python script, so this is always needed
 	python_setup
 
 	# Get tools, libdir, etc
-	# ${S}/build is a workaround for tests
+	# FIXME: I copy-pasted this from the waf-utils eclass, do I really need it?
 	local libdir="${EPREFIX}/usr/$(get_libdir)"
-	use test && libdir="${libdir}:${S}/build"
 
 	# Deal with all the build options
 	local wafconfargs=(
@@ -82,11 +87,11 @@ src_configure() {
 		--mode=release
 		--prefix="${EPREFIX}/usr"
 	)
+	# FIXME: Do I need to quote test?
 	use "test" && wafconfargs+=( --with-cpptests )
 	use python && wafconfargs+=( --with-python )
 	use static && wafconfargs+=( --build-static )
 	use vamp && wafconfargs+=( --with-vamp )
-
 	if use examples; then
 		if use static; then
 			wafconfargs+=( --with-static-examples )
@@ -96,6 +101,7 @@ src_configure() {
 	fi
 
 	# Run configure commands
+	# FIXME: I copy-pasted this from the waf-utils eclass, do I really need it?
 	tc-export AR CC CPP CXX RANLIB
 
 	if use python ; then
@@ -103,40 +109,41 @@ src_configure() {
 		distutils-r1_src_configure
 	fi
 
+	# FIXME: I copy-pasted this from the waf-utils eclass, do I really need it?
 	CCFLAGS="${CFLAGS}"
 	LINKFLAGS="${CFLAGS} ${LDFLAGS}"
 	PKGCONFIG="$(tc-getPKG_CONFIG)"
-	waf-run "configure" "${wafconfargs[*]}"
+	waf-run configure ${wafconfargs[*]}
 }
 
 src_compile() {
-	waf-run "build"
+	waf-run build
 
 	if use doc ; then
-		waf-run 'doc'
+		waf-run doc
 	fi
 }
 
 src_test() {
-	waf-run "run_tests"
+	waf-run run_tests
 
 	if use python ; then
-		waf-run "run_python_tests"
+		waf-run run_python_tests
 	fi
 }
 
 src_install() {
-	waf-run "install" "--destdir=\"${D}\""
+	waf-run install --destdir="${D}"
 
 	if use examples; then
-		echo "noop"
+		echo "TODO: src_install_examples"
 	fi
 
 	if use python ; then
-		echo "noop"
+		echo "TODO: src_install_python"
 	fi
 
 	if use doc; then
-		echo "noop"
+		echo "TODO: src_install_doc"
 	fi
 }
