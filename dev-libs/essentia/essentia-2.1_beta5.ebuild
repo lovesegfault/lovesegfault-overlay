@@ -113,7 +113,7 @@ src_configure() {
 	CCFLAGS="${CFLAGS}"
 	# FIXME: This is a workaround to the lib being linked with no SONAME, should
 	# be removed if/when upstream fixes it.
-	LDFLAGS="${LDFLAGS},-soname=1"
+	LDFLAGS="${LDFLAGS},-soname,libessentia.so.1"
 	LINKFLAGS="${CFLAGS} ${LDFLAGS}"
 	PKGCONFIG="$(tc-getPKG_CONFIG)"
 	echo "CFLAGS=${CFLAGS}" >&2
