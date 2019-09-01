@@ -1,0 +1,31 @@
+diff --git a/src/wscript b/src/wscript
+index c98dbf79..f413d6d6 100644
+--- a/src/wscript
++++ b/src/wscript
+@@ -477,7 +477,7 @@ def build(ctx):
+             source   = sources,
+             target   = 'essentia',
+             use      = ctx.env.USES,
+-            install_path = '${PREFIX}/lib',
++            install_path = '${LIBDIR}',
+             #includes = ctx.env.includes
+         )
+     else:
+@@ -487,7 +487,7 @@ def build(ctx):
+             use      = ctx.env.USES,
+             includes = ctx.env.INCLUDES,
+             cxxflags = [ '-w' ],
+-            install_path = '${PREFIX}/lib'
++            install_path = '${LIBDIR}'
+         )
+ 
+     ctx(source='../essentia.pc.in', **ctx.env.pcfile_opts)
+@@ -508,7 +508,7 @@ def build(ctx):
+     # install pkgconfig file
+     #pc = ctx.path.ant_glob('essentia/build/essentia.pc') #TODO remove
+     #ctx.install_files('${PREFIX}/lib/pkgconfig', pc)     #TODO remove
+-    ctx.install_files('${PREFIX}/lib/pkgconfig', '../build/essentia.pc')
++    ctx.install_files('${LIBDIR}/pkgconfig', '../build/essentia.pc')
+ 
+ 
+     if ctx.env.EXAMPLE_LIST or ctx.env.WITH_VAMP:

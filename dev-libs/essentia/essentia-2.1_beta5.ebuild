@@ -20,7 +20,10 @@ SRC_URI="https://github.com/MTG/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
 test? ( https://github.com/MTG/essentia-audio/archive/beeca09181f6671dc3abe9115289038f097a227d.zip -> audio.zip )
 "
 
-PATCHES=("${FILESDIR}/${P}-wscript.patch")
+PATCHES=(
+	"${FILESDIR}/${P}-libdir.patch"
+	"${FILESDIR}/${P}-test-lib-path.patch"
+)
 
 LICENSE="AGPL-3"
 SLOT="0"
@@ -65,6 +68,14 @@ waf-run() {
 	[ -z "${args}" ] || cmd+=(${args[*]})
 	echo "${cmd[*]}" >&2
 	${cmd[*]} || die "Target ${target} failed"
+}
+
+src_prepare() {
+	default
+	local libdir="${EPREFIX}/usr/$(get_libdir)"
+	local pkgconfigfile="${WORKDIR}/${P}/essentia.pc.in"
+	# We need to fix the pkgconfig file because it is silly and ignores libdir
+	sed -i "s/libdir=\${prefix}\/lib/libdir=${libdir}/g" $pkgconfigfile
 }
 
 src_configure() {
@@ -141,6 +152,9 @@ src_test() {
 
 src_install() {
 	waf-run install --destdir="${D}"
+
+	# We need to correct the missing symlink
+	dosym "libessentia.so" "./usr/$(get_libdir)/libessentia.so.1"
 
 	if use examples; then
 		echo "TODO: src_install_examples"
