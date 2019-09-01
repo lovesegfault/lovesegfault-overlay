@@ -1,3 +1,6 @@
+  01 Sep 2019;  <bemeurer@gentoo.org> essentia-2.1_beta5.ebuild:
+  dev-libs/essentia: The battle continues
+
   31 Aug 2019;  <bemeurer@gentoo.org> +files/essentia-2.1_beta5-wscript.patch,
   essentia-2.1_beta5.ebuild:
   dev-libs/essentia: many small fixes

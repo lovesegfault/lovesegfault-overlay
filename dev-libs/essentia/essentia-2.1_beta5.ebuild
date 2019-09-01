@@ -63,8 +63,8 @@ waf-run() {
 	)
 	# Only append args if any, waf will go nuts if you pass it a ''
 	[ -z "${args}" ] || cmd+=(${args[*]})
-	echo "${cmd[@]}" >&2
-	"${cmd[@]}" || die "Target ${target} failed"
+	echo "${cmd[*]}" >&2
+	${cmd[*]} || die "Target ${target} failed"
 }
 
 src_configure() {
@@ -111,8 +111,15 @@ src_configure() {
 
 	# FIXME: I copy-pasted this from the waf-utils eclass, do I really need it?
 	CCFLAGS="${CFLAGS}"
+	# FIXME: This is a workaround to the lib being linked with no SONAME, should
+	# be removed if/when upstream fixes it.
+	LDFLAGS="${LDFLAGS},-soname=1"
 	LINKFLAGS="${CFLAGS} ${LDFLAGS}"
 	PKGCONFIG="$(tc-getPKG_CONFIG)"
+	echo "CFLAGS=${CFLAGS}" >&2
+	echo "LDFLAGS=${LDFLAGS}" >&2
+	echo "LINKFLAGS=${LINKFLAGS}" >&2
+	echo "PKGCONFIG=${PKGCONFIG}" >&2
 	waf-run configure ${wafconfargs[*]}
 }
 
