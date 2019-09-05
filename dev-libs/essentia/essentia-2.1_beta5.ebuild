@@ -16,8 +16,9 @@ DESCRIPTION="C++ library for audio and music analysis, description and synthesis
 HOMEPAGE="https://essentia.upf.edu"
 # XXX: Remember to verify that the commit hash for the test data URL is still
 # the correct one during version bumps.
+DATA_HASH="beeca09181f6671dc3abe9115289038f097a227d"
 SRC_URI="https://github.com/MTG/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
-test? ( https://github.com/MTG/essentia-audio/archive/beeca09181f6671dc3abe9115289038f097a227d.zip -> audio.zip )
+test? ( https://github.com/MTG/essentia-audio/archive/${DATA_HASH}.zip -> ${PN}-audio-${PV}.zip )
 "
 
 PATCHES=(
@@ -81,7 +82,7 @@ src_prepare() {
 src_configure() {
 	# We need to move the test data into the expected dir
 	if use test; then
-		cp -r "${WORKDIR}/essentia-audio-master/." "./test/audio" || die
+		cp -r "${WORKDIR}/essentia-audio-${DATA_HASH}/." "./test/audio" || die
 	fi
 
 	# Waf is a python script, so this is always needed
