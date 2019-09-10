@@ -1,0 +1,4 @@
+*uberwriter-2.1.5 (10 Sep 2019)
+
+  10 Sep 2019;  <bemeurer@gentoo.org> +metadata.xml, +uberwriter-2.1.5.ebuild:
+  app-editors/uberwriter: new package (2.1.5)

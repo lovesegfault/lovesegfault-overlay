@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>bernardo@standard.ai</email>
+		<name>Bernardo Meurer</name>
+	</maintainer>
+	<maintainer type="project">
+		<email>proxy-maint@gentoo.org</email>
+		<name>Gentoo Proxy Maintainers Project</name>
+	</maintainer>
+	<longdescription lang="en">
+		Uberwriter is a GTK+ based distraction free Markdown editor, mainly
+		developed by Wolf Vollprecht. It uses pandoc as backend for markdown
+		parsing and offers a very clean and sleek user interface.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">UberWriter/uberwriter</remote-id>
+	</upstream>
+</pkgmetadata>
