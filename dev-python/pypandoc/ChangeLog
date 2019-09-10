@@ -1,0 +1,4 @@
+*pypandoc-1.4 (10 Sep 2019)
+
+  10 Sep 2019;  <bemeurer@gentoo.org> +metadata.xml, +pypandoc-1.4.ebuild:
+  dev-python/pypandoc: new package (1.4)
