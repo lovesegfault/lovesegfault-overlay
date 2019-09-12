@@ -1,5 +1,0 @@
-*sphinxcontrib-pretty-searchresults-0.3.5 (28 Aug 2019)
-
-  28 Aug 2019;  <bemeurer@gentoo.org> +metadata.xml,
-  +sphinxcontrib-pretty-searchresults-0.3.5.ebuild:
-  dev-python/sphinxcontrib-pretty-searchresults: new package (0.3.5)
