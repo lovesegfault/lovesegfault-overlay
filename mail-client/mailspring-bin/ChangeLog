@@ -1,3 +1,6 @@
+  12 Sep 2019;  <bemeurer@gentoo.org> mailspring-bin-1.6.3.ebuild:
+  mail-client/mailspring-bin: remove invalid RESTRICT
+
   15 Aug 2019;  <bemeurer@gentoo.org> mailspring-bin-1.6.3.ebuild:
   mail-client/mailspring-bin: fix permissions
 

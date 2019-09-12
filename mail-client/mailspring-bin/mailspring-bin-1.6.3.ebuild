@@ -13,7 +13,6 @@ MY_P="${MY_PN}-${PV}"
 
 SRC_URI="https://github.com/Foundry376/${MY_PN}/releases/download/${PV}/${MY_P,}-amd64.deb"
 KEYWORDS="-* ~amd64"
-RESTRICT="bindinst"
 LICENSE="GPL-3"
 SLOT="0"
 
