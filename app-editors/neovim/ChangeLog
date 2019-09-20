@@ -1,3 +1,6 @@
+  20 Sep 2019;  <bemeurer@gentoo.org> neovim-0.3.8.ebuild:
+  app-editors/neovim: small fixes
+
   19 Sep 2019;  <bemeurer@gentoo.org> neovim-0.4.2.ebuild:
   app-editors/neovim: add luv dependency
 
