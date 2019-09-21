@@ -1,3 +1,6 @@
+  21 Sep 2019;  <bemeurer@gentoo.org> essentia-2.1_beta5.ebuild:
+  dev-libs/essentia: continue work
+
   05 Sep 2019;  <bemeurer@gentoo.org> essentia-2.1_beta5.ebuild:
   dev-libs/luv: remove package
 

@@ -6,7 +6,7 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
+PYTHON_COMPAT=( python3_{5,6} pypy3 )
 PYTHON_REQ_USE='threads(+)' # Required by waf
 # NB: This package is highly non-compliant to usual waf-isms, thus we don't use
 # waf-utils.
@@ -30,12 +30,15 @@ LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc examples python test static vamp"
+REQUIRED_USE="doc? ( examples python vamp )"
+RESTRICT="!test? ( test )"
+QA_SONAME="/usr/lib64/libessentia.so"
 
 BDEPEND="
 	doc? (
 		app-doc/doxygen
 		app-text/pandoc
-		dev-python/sphinx
+		<dev-python/sphinx-2.0.0
 		dev-python/sphinxcontrib-doxylink
 		dev-python/sphinxcontrib-pretty-searchresults
 	)
@@ -52,20 +55,20 @@ RDEPEND="${DEPEND}"
 WAF="${S}/waf"
 
 waf-run() {
-	[ $# -ge 1 ] || die "Insufficient arguments given to waf-run"
 	# The build target, such as configure, build, test, etc
 	local target="${1}"
 	# The arguments, such as --destdir, --libdir, --jobs
 	local args="${@:2}"
 	# Construct command
+	# --jobs=$(makeopts_jobs)
 	local cmd=(
 		"${EPYTHON}"
 		"${WAF}"
-		"${target}"
-		--jobs=$(makeopts_jobs)
-		--verbose
+		"--jobs=24"
+		"--verbose"
 	)
 	# Only append args if any, waf will go nuts if you pass it a ''
+	[ -z "${target}" ] || cmd+=(${target[*]})
 	[ -z "${args}" ] || cmd+=(${args[*]})
 	echo "${cmd[*]}" >&2
 	${cmd[*]} || die "Target ${target} failed"
@@ -94,21 +97,21 @@ src_configure() {
 
 	# Deal with all the build options
 	local wafconfargs=(
-		--fft=FFTW
-		--libdir="${libdir}"
-		--mode=release
-		--prefix="${EPREFIX}/usr"
+		"--fft=FFTW"
+		"--libdir=${libdir}"
+		"--mode=release"
+		"--prefix=${EPREFIX}/usr"
 	)
 	# FIXME: Do I need to quote test?
-	use "test" && wafconfargs+=( --with-cpptests )
-	use python && wafconfargs+=( --with-python )
-	use static && wafconfargs+=( --build-static )
-	use vamp && wafconfargs+=( --with-vamp )
+	use "test" && wafconfargs+=( "--with-cpptests" )
+	use python && wafconfargs+=( "--with-python" )
+	use static && wafconfargs+=( "--build-static" )
+	use vamp && wafconfargs+=( "--with-vamp" )
 	if use examples; then
 		if use static; then
-			wafconfargs+=( --with-static-examples )
+			wafconfargs+=( "--with-static-examples" )
 		else
-			wafconfargs+=( --with-examples )
+			wafconfargs+=( "--with-examples" )
 		fi
 	fi
 
@@ -125,7 +128,8 @@ src_configure() {
 	CCFLAGS="${CFLAGS}"
 	# FIXME: This is a workaround to the lib being linked with no SONAME, should
 	# be removed if/when upstream fixes it.
-	LDFLAGS="${LDFLAGS},-soname,libessentia.so.1"
+	# LDFLAGS="${LDFLAGS},-soname,essentia.so.1"
+	# FIXME: The workaround above breaks tests, I don't know how to fix it
 	LINKFLAGS="${CFLAGS} ${LDFLAGS}"
 	PKGCONFIG="$(tc-getPKG_CONFIG)"
 	echo "CFLAGS=${CFLAGS}" >&2
@@ -136,7 +140,7 @@ src_configure() {
 }
 
 src_compile() {
-	waf-run build
+	waf-run
 
 	if use doc ; then
 		waf-run doc
@@ -165,7 +169,6 @@ src_install() {
 		echo "TODO: src_install_python"
 	fi
 
-	if use doc; then
-		echo "TODO: src_install_doc"
-	fi
+	use doc && local HTML_DOCS=( build/doc/doxygen/html/. )
+	einstalldocs
 }
