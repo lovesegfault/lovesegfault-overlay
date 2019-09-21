@@ -1,4 +1,0 @@
-*libvterm-0.1 (19 Sep 2019)
-
-  19 Sep 2019;  <bemeurer@gentoo.org> +libvterm-0.1.ebuild, +metadata.xml:
-  dev-libs/libvterm: bump 0.1
