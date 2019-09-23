@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>bernardo@standard.ai</email>
+		<name>Bernardo Meurer</name>
+	</maintainer>
+	<use>
+		<flag name="audio">Install <pkg>media-sound/beets</pkg> and friends</flag>
+		<flag name="dev">Install assorted dev tooling</flag>
+		<flag name="thinkpad">Install thinkpad-specific utilities</flag>
+		<flag name="wm">Install Wayland window manager</flag>
+	</use>
+</pkgmetadata>

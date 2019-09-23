@@ -1,0 +1,4 @@
+*lovesegfault-0 (23 Sep 2019)
+
+  23 Sep 2019;  <bemeurer@gentoo.org> +lovesegfault-0.ebuild, +metadata.xml:
+  virtual/lovesegfault: new pkg
