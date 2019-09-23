@@ -1,0 +1,4 @@
+*rocksdb-6.2.4 (23 Sep 2019)
+
+  23 Sep 2019;  <bemeurer@gentoo.org> +metadata.xml, +rocksdb-6.2.4.ebuild:
+  dev-db/rocksdb: new package (6.2.4)
