@@ -46,9 +46,9 @@ CORE_DEPEND="
 	net-vpn/wireguard
 	sys-apps/bat
 	sys-apps/exa
-	sys-apps/fwupd[agent,colorhug,nvme,pkcs7,thunderbolt,uefi,-doc]
+	sys-apps/fwupd[agent,colorhug,nvme,pkcs7,thunderbolt,uefi]
 	sys-apps/ripgrep
-	sys-boot/grub:2[libzfs,mount]
+	sys-boot/grub:2[mount]
 	sys-devel/gcc[lto,pgo]
 	sys-fs/fuse
 	sys-fs/fuse-exfat
@@ -70,10 +70,6 @@ DEV_DEPEND="
 	app-emulation/docker
 	app-emulation/lxd[tools]
 	app-emulation/lxc
-	app-emulation/vagrant
-	app-emulation/virtualbox
-	app-emulation/virtualbox-additions
-	app-emulation/virtualbox-extpack-oracle
 	dev-lang/ghc
 	dev-lang/rust[clippy,doc,rls,rustfmt]
 	dev-libs/libcgroup
