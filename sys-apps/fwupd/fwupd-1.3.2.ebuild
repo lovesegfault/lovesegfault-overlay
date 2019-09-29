@@ -15,15 +15,13 @@ LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="agent amt consolekit dell gtk-doc elogind +gpg introspection +man nvme pkcs7 redfish synaptics systemd test thunderbolt uefi"
-REQUIRED_USE="
-	${PYTHON_REQUIRED_USE}
+REQUIRED_USE="${PYTHON_REQUIRED_USE}
 	^^ ( consolekit elogind systemd )
 	dell? ( uefi )
 "
 RESTRICT="!test? ( test )"
 
-BDEPEND="
-	$(vala_depend)
+BDEPEND="$(vala_depend)
 	virtual/pkgconfig
 	gtk-doc? ( dev-util/gtk-doc )
 	introspection? ( dev-libs/gobject-introspection )
@@ -36,8 +34,7 @@ BDEPEND="
 		net-libs/gnutls[tools]
 	)
 "
-DEPEND="
-	${PYTHON_DEPS}
+DEPEND="${PYTHON_DEPS}
 	>=app-arch/gcab-1.0
 	app-arch/libarchive:=
 	dev-db/sqlite
@@ -103,7 +100,6 @@ src_prepare() {
 	sed -e "/test('thunderbolt-self-test', e, env: test_env, timeout : 120)/d" \
 		-i plugins/thunderbolt/meson.build || die
 	vala_src_prepare
-	xdg_src_prepare
 }
 
 src_configure() {
@@ -151,6 +147,7 @@ src_install() {
 }
 
 pkg_postinst() {
+	xdg_pkg_postinst
 	elog "In case you are using openrc as init system"
 	elog "and you're upgrading from <fwupd-1.1.0, you"
 	elog "need to start the fwupd daemon via the openrc"
