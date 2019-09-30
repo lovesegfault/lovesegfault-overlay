@@ -119,6 +119,7 @@ THINKPAD_DEPEND="
 	sys-auth/pam_u2f
 	sys-power/acpi_call
 	sys-power/powertop
+	x11-misc/colord
 	video_cards_nvidia? ( ${NV_DEPEND} )
 "
 
