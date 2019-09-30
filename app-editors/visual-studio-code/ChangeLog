@@ -1,0 +1,5 @@
+*visual-studio-code-1.38.1 (30 Sep 2019)
+
+  30 Sep 2019; Bernardo Meurer <lovesegfault@gentoo.org> +metadata.xml,
+  +visual-studio-code-1.38.1.ebuild:
+  app-editors/visual-studio-code: new pkg
