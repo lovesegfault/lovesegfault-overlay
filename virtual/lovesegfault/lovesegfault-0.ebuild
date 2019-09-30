@@ -46,7 +46,7 @@ CORE_DEPEND="
 	net-vpn/wireguard
 	sys-apps/bat
 	sys-apps/exa
-	sys-apps/fwupd[agent,colorhug,nvme,pkcs7,thunderbolt,uefi]
+	sys-apps/fwupd[agent,nvme,pkcs7,thunderbolt,uefi]
 	sys-apps/ripgrep
 	sys-boot/grub:2[mount]
 	sys-devel/gcc[lto,pgo]
