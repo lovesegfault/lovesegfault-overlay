@@ -1,3 +1,6 @@
+  30 Sep 2019; Bernardo Meurer <lovesegfault@gentoo.org> lovesegfault-0.ebuild:
+  virtual/lovesegfault: add shell devtools
+
   25 Sep 2019;  <bemeurer@gentoo.org> lovesegfault-0.ebuild:
   virtual/lovesegfault: changed deps
 

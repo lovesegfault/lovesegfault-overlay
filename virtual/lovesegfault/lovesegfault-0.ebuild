@@ -75,6 +75,7 @@ DEV_DEPEND="
 	dev-libs/libcgroup
 	dev-python/autopep8
 	dev-python/bandit
+	dev-python/bashate
 	dev-python/pipenv
 	dev-python/pylama
 	dev-python/twine
@@ -85,6 +86,7 @@ DEV_DEPEND="
 	dev-util/meld
 	dev-util/perf
 	dev-util/pkgcheck
+	dev-util/shellcheck
 	dev-util/strace
 	sys-apps/nix
 	sys-apps/yarn
