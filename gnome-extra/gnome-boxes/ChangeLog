@@ -1,3 +1,9 @@
+*gnome-boxes-3.34.0 (03 Oct 2019)
+
+  03 Oct 2019; Bernardo Meurer <lovesegfault@gentoo.org>
+  +gnome-boxes-3.34.0.ebuild, gnome-boxes-9999.ebuild:
+  gnome-extra/gnome-boxes: bump 3.34.0
+
 *gnome-boxes-9999 (03 Oct 2019)
 
   03 Oct 2019; Bernardo Meurer <lovesegfault@gentoo.org>
