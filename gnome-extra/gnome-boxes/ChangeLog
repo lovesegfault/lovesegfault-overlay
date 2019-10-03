@@ -1,0 +1,5 @@
+*gnome-boxes-9999 (03 Oct 2019)
+
+  03 Oct 2019; Bernardo Meurer <lovesegfault@gentoo.org>
+  +gnome-boxes-9999.ebuild, +metadata.xml:
+  gnome-extra/gnome-boxes: add 9999
