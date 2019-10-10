@@ -33,7 +33,6 @@ CORE_DEPEND="
 	app-text/odt2txt
 	dev-ruby/gist
 	dev-vcs/git
-	dev-vcs/git-lfs
 	media-libs/exiftool
 	media-libs/libcaca
 	media-video/ffmpegthumbnailer
