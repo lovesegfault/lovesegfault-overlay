@@ -1,0 +1,6 @@
+*spdlog-1.4.2 (11 Oct 2019)
+*spdlog-9999 (11 Oct 2019)
+
+  11 Oct 2019; Bernardo Meurer <lovesegfault@gentoo.org> +metadata.xml,
+  +spdlog-1.4.2.ebuild, +spdlog-9999.ebuild:
+  dev-libs/spdlog: bump 1.4.2
