@@ -1,3 +1,9 @@
+*visual-studio-code-1.39.0 (14 Oct 2019)
+
+  14 Oct 2019; Bernardo Meurer <lovesegfault@gentoo.org>
+  +visual-studio-code-1.39.0.ebuild, -visual-studio-code-1.38.1.ebuild:
+  app-editors/visual-studio-code: bump 1.39.0
+
 *visual-studio-code-1.38.1 (30 Sep 2019)
 
   30 Sep 2019; Bernardo Meurer <lovesegfault@gentoo.org> +metadata.xml,
