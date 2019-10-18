@@ -1,0 +1,5 @@
+*fzf-0.18.0 (18 Oct 2019)
+
+  18 Oct 2019; Bernardo Meurer <lovesegfault@gentoo.org> +fzf-0.18.0.ebuild,
+  +metadata.xml:
+  apps-shells/fzf: add 0.18.0

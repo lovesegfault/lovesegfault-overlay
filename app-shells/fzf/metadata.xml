@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <maintainer type="person">
+        <email>bernardo@standard.ai</email>
+        <name>Bernardo Meurer</name>
+    </maintainer>
+    <maintainer type="project">
+        <email>proxy-maint@gentoo.org</email>
+        <name>Gentoo Proxy Maintainers Project></name>
+    </maintainer>
+    <longdescription lang="en">
+		A command-line fuzzy finder
+	</longdescription>
+	<use>
+		<flag name="tmux">Enable tmux plugin</flag>
+	</use>
+    <upstream>
+        <remote-id type="github">junegunn/fzf</remote-id>
+        <bugs-to>https://github.com/junegunn/fzf/issues</bugs-to>
+        <changelog>https://github.com/junegunn/fzf/releases</changelog>
+    </upstream>
+</pkgmetadata>
