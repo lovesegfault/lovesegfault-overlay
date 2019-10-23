@@ -1,3 +1,6 @@
+  23 Oct 2019; Bernardo Meurer <lovesegfault@gentoo.org> lovesegfault-0.ebuild:
+  virtual/lovesegfault:
+
   10 Oct 2019; Bernardo Meurer <lovesegfault@gentoo.org> lovesegfault-0.ebuild:
   virtual/lovesegfault: remove git-lfs
 

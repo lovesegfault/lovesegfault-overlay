@@ -67,14 +67,16 @@ DEV_DEPEND="
 	app-editors/neovim
 	app-editors/sublime-text
 	app-emulation/docker
-	app-emulation/lxd[tools]
 	app-emulation/lxc
+	app-emulation/lxd[tools]
 	dev-lang/ghc
 	dev-lang/rust[clippy,doc,rls,rustfmt]
 	dev-libs/libcgroup
+	dev-python/neovim-python-client
 	dev-python/autopep8
 	dev-python/bandit
 	dev-python/bashate
+	dev-python/neovim-remote
 	dev-python/pipenv
 	dev-python/pylama
 	dev-python/twine
